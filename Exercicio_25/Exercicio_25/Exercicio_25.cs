@@ -62,7 +62,11 @@ namespace Exercicio_25
         static tp_no Remove(ref tp_no r, int x)
         {
             if (r == null)
+            {
+                Console.WriteLine("Valor não encontrado!");
+                Console.ReadKey();
                 return null;
+            }
             else if (x == r.valor)
             {
                 tp_no p = r;
@@ -75,6 +79,8 @@ namespace Exercicio_25
                     p = RetornaMaior(ref r.esq);
                     r.valor = p.valor;
                 }
+                Console.WriteLine("Valor encontrado!");
+                Console.ReadKey();
                 return p;
             }
             else if (x < r.valor)
